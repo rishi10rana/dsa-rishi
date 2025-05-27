@@ -56,6 +56,8 @@ class Solution {
             output.pop_back(); // jab backtrac karke ke wapis aaoge to output mei se remove kardena
         }
         
+        // jab backtrack karke piche jaaoo tab visited wapis 0 kardena
+        visited[srcx][srcy] = 0;
     }
     
     vector<string> ratInMaze(vector<vector<int>>& maze) {
