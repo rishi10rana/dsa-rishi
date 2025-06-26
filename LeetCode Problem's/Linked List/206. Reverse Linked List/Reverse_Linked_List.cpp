@@ -25,4 +25,45 @@ public:
         head = prevNode;
         return head;
     }
+
+
+    /*
+    // Recursive Solution 1 T.C = O(n)
+    void solve(ListNode* &head,ListNode* current,ListNode* prev){
+        // base case
+        if(current==NULL){
+            head = prev;
+            return;
+        }
+        // to keep track of front nodes
+        ListNode* forward = current->next;
+        solve(head,forward,current);
+        // on coming back from last during recursion
+        current->next = prev;
+    }
+
+    ListNode* reverseList(ListNode* head) {
+        ListNode* current = head;
+        ListNode* prev = NULL;
+        solve(head,current,prev);
+        return head;
+    }
+    */
+
+    // Recursive Solution 2
+    ListNode* reverseList(ListNode* head) {
+        // base case
+        if(head == NULL || head->next == NULL){
+            return head;
+        }
+
+        ListNode* chotahead = reverseList(head->next); // basically head ko move kara raha till last node to make it head
+
+        // while coming back
+        head->next->next = head;
+        head->next = NULL;
+
+        // last mei chotahead jismei last node ko head bana kar dal diya tha wahi return kardo
+        return chotahead;
+    }
 };
