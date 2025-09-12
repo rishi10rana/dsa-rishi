@@ -29,10 +29,11 @@ class Solution {
                 k++;
             }
             
-            // str2 is the prefix of str1 and is coming after it --> invalid case
+            
             if(j == str1.size()){
                 continue;
             }
+            // str2 is the prefix of str1 and is coming after it --> invalid case
             if(j < str1.size() && k == str2.size()){
                 return "";
             }
