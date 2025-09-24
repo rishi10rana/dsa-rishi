@@ -12,6 +12,7 @@ public:
             int sum = 0;
             for(int j=i;j<n;j++){
                 sum = sum + nums[j];
+                
                 if(sum==goal){ // consider this subarray as it gives goal
                     count++;
                 }
